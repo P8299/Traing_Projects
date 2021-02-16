@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+<title> window example </title>
+</head>
+<script>
+    function nwindow() {
+        var weightt = document.getElementById("weight").value;
+    var heightt = document.getElementById("height").value;
+    var leftt = document.getElementById("left").value;
+    var topp = document.getElementById("top").value;
+
+     document.write("Weight:",weightt);   
+    document.write("<br/>");
+   
+     document.write("Height:",heightt);   
+    document.write("<br/>");
+
+     document.write("Left:",leftt);   
+    document.write("<br/>");
+    
+     document.write("Top:",topp);   
+    
+}
+    }
+</script>
+<body >
+<form id="frmlab">
+<table border="1" cellspacing="8" cellpadding="10" bordercolor="blue">
+<tr><td colspan="7" align="center"><label>Creating a Window</label></td></tr>
+    <tr><td colspan="7" align="center"><label>Window Size</label></td></tr>
+    <tr><td><label>Weight</label>
+    <input type="number" id="weight" code="code" SIZE="10"  maxlength="4"></td> 
+    <td><label>Height</label>
+        <input type="number" id="height" code="code" SIZE="10"  maxlength="4"></td> 
+    </tr>
+    <tr><td colspan="7" align="center"><label>Position</label></td></tr>
+    <tr><td><label>Left</label>
+        <input type="number" id="left" code="code" SIZE="10"  maxlength="4"></td> 
+        <td><label>Top</label>
+            <input type="number" id="top" code="code" SIZE="10"  maxlength="4"></td> 
+        </tr>
+        <tr><td><button input onclick="nwindow()">New Window</button></td>
+            <td><button input type="reset">Reset</button></td></tr>
+</table>
+</form>
+</body>
+</html>
+

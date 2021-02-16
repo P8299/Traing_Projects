@@ -1,0 +1,107 @@
+﻿<html>
+    <head>
+        <title>lastone</title>
+    </head>
+    <body style="background-color:skyblue">
+        <form>
+            <h1 style="color:white"><center>Product Details</center></h1>
+            <centre>
+            <table border="10" bordercolor="white" align="center">
+                <tr>
+                    <td>Categories</td>
+          <td>
+            <select onchange="change()" id="categories">
+              <option value="electronics">Electronics</option>
+              <option value="grocery">Grocery</option>
+            </select>
+          </td>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                    <td>Products</td>
+                    <td>
+                      <select id="products"></select>
+                    </td>
+                  </tr>
+                <tr>
+                    <td>Quantity:</td>
+                    <td><input type="number" id="quantity" ></td>
+                </tr>
+                <tr>
+                    <td>Total Price:</td>
+                    <td><input type="number" id="total"  readonly></td>
+                </tr>
+                <tr>
+                    <td><button onclick="nwindow()">Submit</button></td>
+                    <td><input type="reset" value="clear" name="clear"></td>
+                </tr>
+                
+            </table>
+            
+        </form>
+    </body>
+    <script>
+        var groeceryList = ["soap", "powder", "paste"];
+        var electronicsList = ["television", "phone", "laptop"];
+        var quantity = document.getElementById("quantity");
+        var total = document.getElementById("total");
+        var products = document.getElementById("products");
+        var categories = document.getElementById("categories");
+        electronicsList.forEach((l, i) => {
+          products.remove(i);
+          var c = document.createElement("option");
+          c.value = l;
+          c.text = l.toUpperCase();
+          products.options.add(c, i);
+        });
+        function change() {
+          if (categories.value === "electronics") {
+            electronicsList.forEach((l, i) => {
+              products.remove(i);
+              var c = document.createElement("option");
+              c.value = l;
+              c.text = l.toUpperCase();
+              products.options.add(c, i);
+            });
+          } else {
+            groeceryList.forEach((l, i) => {
+              products.remove(i);
+              var c = document.createElement("option");
+              c.value = l;
+              c.text = l.toUpperCase();
+              products.options.add(c, i);
+            });
+          }
+        }
+        function nwindow() {
+          var prices = {
+            television: 20000,
+            laptop: 30000,
+            phone: 10000,
+            soap: 40,
+            powder: 90,
+            paste: 50,
+          };
+          console.log(quantity.value);
+          let tot = prices[products.value] * quantity.value;
+          total.value = tot;
+    
+          var windowHandle = window.open(
+            "prob2.html",
+            "Invoice",
+            "width=500,height=500"
+          );
+          windowHandle.document.open();
+          windowHandle.document.write("<H1>invoice</h1>");
+          windowHandle.document
+            .write(`<table cellspacing="8" cellpadding="10" bordercolor="black">
+        <tr>
+          <th>${categories.value}</th>
+          <th>${products.value}</th>
+          <th>${quantity.value}</th>
+          <th>${tot}</th>
+        </tr>`);
+        }
+      </script>
+</html>

@@ -1,0 +1,72 @@
+﻿<html>
+    <head>
+        <script>
+            function nwindow() {
+                var Bquan = document.getElementById("Bquant").value;
+                var Cquan = document.getElementById("Cquant").value;
+                var Mquan = document.getElementById("Mquant").value;
+                var Lquan = document.getElementById("Lquant").value;
+                if (Bquan == 0 && Cquan == 0 && Mquan == 0 && Lquan == 0) {
+                    window.alert("No Items selected!!");
+                }
+                else {
+                    document.write("<h2><center>INVOICE</center></h2>");
+                    document.write("<h4>PRODUCT -- QUANTITY -- PRICE -- TOTAL</h4><br>");
+                    if (Bquan > 0) {
+                        document.write("Barbie Doll --- " + Bquan + " --- 20 --- " + (20 * Bquan));
+                        document.write("<br>");
+
+                    }
+                    if (Cquan > 0) {
+                        document.write("Calculator --- " + Cquan + " --- 30 --- " + (30 * Cquan));
+                        document.write("<br>");
+                    }
+                    if (Mquan > 0) {
+                        document.write("Mobile Phone --- " + Mquan + " --- 40 --- " + (40 * Mquan));
+                        document.write("<br>");
+                    }
+                    if (Lquan > 0) {
+                        document.write("LG DVD --- " + Lquan + " --- 50 --- " + (50 * Lquan));
+                        document.write("<br>");
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body style="background-color: skyblue">
+        <h1>PRODUCTS</h1>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <td>Barbie Doll</td>
+                <td>Beautifull</td>
+                <td>20</td>
+                <td><input type="number" id="Bquant"></td>
+            </tr>
+            <tr>
+                <td>Calculator</td>
+                <td>Calculator with latest features</td>
+                <td>30</td>
+                <td><input type="number" id="Cquant"></td>
+            </tr>
+            <tr>
+                <td>Mobile Phone</td>
+                <td>Camera,Java,GAMES,GPRS</td>
+                <td>40</td>
+                <td><input type="number" id="Mquant"></td>
+            </tr>
+            <tr>
+                <td>LG DVD</td>
+                <td>5 disc changer</td>
+                <td>50</td>
+                <td><input type="number" id="Lquant"></td>
+            </tr>
+        </table>
+        <button onclick="nwindow()">ORDER</button>
+    </body>
+</html>
